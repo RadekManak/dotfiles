@@ -1,10 +1,13 @@
 - defaults:
     link:
+      create: true
       relink: true
 
 - clean: ['~']
 
 - link:
+    ~/.vimrc: vimrc
+    ~/.config/i3/config: XDG_CONFIG_HOME/i3/config
     ~/.bashrc: bashrc
     ~/.gitconfig: gitconfig
 
