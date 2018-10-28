@@ -9,6 +9,7 @@
 - link:
     ~/.vimrc: vimrc
     ~/.config/i3/config: XDG_CONFIG_HOME/i3/config
+    ~/.config/compton.conf: XDG_CONFIG_HOME/compton.conf
     ~/.config/xfce4/terminal/terminalrc: XDG_CONFIG_HOME/xfce4/terminal/terminalrc
     ~/.bashrc: bashrc
     ~/.gitconfig: gitconfig
