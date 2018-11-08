@@ -32,6 +32,7 @@ let g:UltiSnipsJumpBackwardTrigger="<c-y>"
 call vundle#end()
 syntax on 
 filetype plugin indent on
+set number
 colorscheme tokyo-metro
 
 set expandtab
