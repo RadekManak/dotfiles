@@ -12,15 +12,11 @@ Plugin 'VundleVim/Vundle.vim'
 
 " Color schemes
 Plugin 'koirand/tokyo-metro.vim'
+Plugin 'jiangmiao/auto-pairs'
+Plugin 'scrooloose/nerdtree'
 Plugin 'Valloric/YouCompleteMe' 
-
-" .i3/config highlight
 Plugin 'mboughaba/i3config.vim'
-
-" Track the engine.
 Plugin 'SirVer/ultisnips'
-
-" Snippets are separated from the engine. Add this if you want them:
 Plugin 'honza/vim-snippets'
 
 " Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
@@ -35,6 +31,9 @@ filetype plugin indent on
 set number
 colorscheme tokyo-metro
 
+map <C-n> :NERDTreeToggle<CR>
+
 set expandtab
+set number
 set shiftwidth=2
 set softtabstop=2
