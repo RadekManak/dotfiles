@@ -35,5 +35,7 @@ map <C-n> :NERDTreeToggle<CR>
 
 set expandtab
 set number
+set cursorline
+set relativenumber
 set shiftwidth=2
 set softtabstop=2
