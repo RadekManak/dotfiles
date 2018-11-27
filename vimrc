@@ -10,7 +10,8 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
-" Color schemes
+" Installed Plugins
+Plugin 'airblade/vim-gitgutter'
 Plugin 'koirand/tokyo-metro.vim'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'scrooloose/nerdtree'
