@@ -42,6 +42,7 @@ map <C-n> :NERDTreeToggle<CR>
 
 set updatetime=0
 set expandtab
+set mouse=a
 set number
 set cursorline
 set relativenumber
