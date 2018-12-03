@@ -40,6 +40,7 @@ colorscheme tokyo-metro
 
 map <C-n> :NERDTreeToggle<CR>
 
+set updatetime=0
 set expandtab
 set number
 set cursorline
