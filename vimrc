@@ -11,6 +11,7 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
 " Installed Plugins
+Plugin 'junegunn/goyo.vim'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'koirand/tokyo-metro.vim'
 Plugin 'jiangmiao/auto-pairs'
