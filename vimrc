@@ -28,6 +28,11 @@ let g:UltiSnipsJumpBackwardTrigger="<c-y>"
 
 
 call vundle#end()
+
+" Copy selected text to system clipboard (gvim required)
+vnoremap <C-c> "*Y :let @+=@*<CR>"
+map <C-p> "+P"
+
 syntax on 
 filetype plugin indent on
 set number
