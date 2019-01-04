@@ -36,7 +36,6 @@ map <C-p> "+P"
 
 syntax on 
 filetype plugin indent on
-set number
 colorscheme tokyo-metro
 
 map <C-n> :NERDTreeToggle<CR>
@@ -45,6 +44,7 @@ set updatetime=0
 set expandtab
 set mouse=a
 set number
+set showcmd
 set cursorline
 set relativenumber
 set shiftwidth=2
