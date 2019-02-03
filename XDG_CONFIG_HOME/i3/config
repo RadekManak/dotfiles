@@ -54,7 +54,7 @@ bindsym XF86MonBrightnessDown exec "light -U 10; notify-send 'brightness down'"
 bindsym $mod+Ctrl+b exec terminal -e 'bmenu'
 bindsym $mod+F1 exec firefox
 bindsym $mod+F8 exec spotify
-bindsym $mod+F3 exec pcmanfm
+bindsym $mod+F3 exec thunar
 # bindsym $mod+F3 exec ranger
 bindsym $mod+Shift+F3 exec gksu pcmanfm
 bindsym $mod+F5 exec terminal -e 'mocp'
@@ -313,7 +313,7 @@ set_from_resource $term_color15    color15
 bar {
 	i3bar_command i3bar -t
 	status_command i3status
-	position top
+	position bottom
 
 ## please set your primary output first. Example: 'xrandr --output eDP1 --primary'
 #	tray_output primary
@@ -356,8 +356,8 @@ bindsym $mod+m bar mode toggle
 #############################
 
 # Set inner/outer gaps
-gaps inner 14
-gaps outer -2
+gaps inner 0
+gaps outer 0
 
 # Additionally, you can issue commands with the following syntax. This is useful to bind keys to changing the gap size.
 # gaps inner|outer current|all set|plus|minus <px>
