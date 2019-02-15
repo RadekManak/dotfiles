@@ -59,7 +59,7 @@ modules-left = bspwm i3
 modules-center = player-mpris-simple
 modules-right = filesystem pulseaudio xkeyboard memory cpu wlan eth battery date 
 
-tray-position = right
+tray-position = none
 tray-padding = 2
 ;tray-background = #0063ff
 
