@@ -16,5 +16,6 @@
     ~/.config/polybar/: XDG_CONFIG_HOME/polybar/*
     ~/.bashrc: bashrc
     ~/.gitconfig: gitconfig
+    ~/.config/dunst/dunstrc: XDG_CONFIG_HOME/dunst/dunstrc
 
 
