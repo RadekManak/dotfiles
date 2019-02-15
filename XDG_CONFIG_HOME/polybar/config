@@ -56,7 +56,7 @@ font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
 font-2 = siji:pixelsize=10;1
 
 modules-left = bspwm i3
-modules-center = 
+modules-center = player-mpris-simple
 modules-right = filesystem pulseaudio xkeyboard memory cpu wlan eth battery date 
 
 tray-position = right
@@ -179,6 +179,14 @@ icon-next = 
 
 label-song-maxlen = 25
 label-song-ellipsis = true
+
+[module/player-mpris-simple]
+type = custom/script
+exec = ~/.config/polybar/player-mpris-simple.sh
+interval = 3
+click-left = playerctl play-pause
+click-right = playerctl next
+click-middle = i3-msg '[class="(?i)Spotify"] focus' 
 
 [module/xbacklight]
 type = internal/xbacklight
