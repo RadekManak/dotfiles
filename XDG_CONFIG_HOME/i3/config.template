@@ -140,8 +140,7 @@ set $ws8 8
 
 # workspace position on monitors
 set $output_left DP-0
-set $output_center HDMI-0
-
+set $output_center ${primary_display}
 exec xrandr --output $output_left --left-of $output_center
 
 workspace $ws1 output $output_left
@@ -223,7 +222,7 @@ for_window [urgent=latest] focus
 bindsym $mod+Shift+c reload
 
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-bindsym $mod+Shift+r restart
+bindsym $mod+Shift+r exec "~/.config/i3/scripts/restart.sh || (i3-msg restart; sleep 0.2; notify-send -u critical \\"I3 restarted but script failed\\")"
 
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
