@@ -93,7 +93,8 @@ alias la='ls -A'
 alias l='ls -CF'
 
 #set EDITOR
-export EDITOR=vim
+export EDITOR=nvim
+alias vim="nvim"
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like
