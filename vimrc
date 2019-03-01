@@ -11,18 +11,18 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
 " Installed Plugins
-Plugin 'junegunn/goyo.vim'
 Plugin 'airblade/vim-gitgutter'
-Plugin 'koirand/tokyo-metro.vim'
+Plugin 'rakr/vim-one'
 Plugin 'Raimondi/delimitMate'
 Plugin 'scrooloose/nerdtree'
-Plugin 'Valloric/YouCompleteMe' 
+Plugin 'Valloric/YouCompleteMe'
 Plugin 'pearofducks/ansible-vim'
 Plugin 'mboughaba/i3config.vim'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
-Plugin 'christoomey/vim-tmux-navigator'
+"Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'tpope/vim-fugitive'
+Plugin 'bronson/vim-trailing-whitespace'
 
 call vundle#end()
 
@@ -30,10 +30,10 @@ call vundle#end()
 vnoremap <C-c> "*Y :let @+=@*<CR>"
 map <C-p> "+P"
 
-syntax on 
+syntax on
 filetype plugin indent on
+colorscheme one
 set background=dark
-colorscheme tokyo-metro
 set termguicolors
 
 " Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
