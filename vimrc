@@ -49,6 +49,7 @@ let g:ansible_name_highlight = 'd'
 let g:ansible_extra_keywords_highlight = 1
 
 set updatetime=0
+set noswapfile
 set expandtab
 set mouse=a
 set number
