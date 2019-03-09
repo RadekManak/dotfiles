@@ -8,22 +8,23 @@ endif
 
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
-Plugin 'VundleVim/Vundle.vim'
-
-" Installed Plugins
-Plugin 'airblade/vim-gitgutter'
-Plugin 'rakr/vim-one'
-Plugin 'Raimondi/delimitMate'
-Plugin 'scrooloose/nerdtree'
-Plugin 'Valloric/YouCompleteMe'
-Plugin 'pearofducks/ansible-vim'
-Plugin 'mboughaba/i3config.vim'
-Plugin 'SirVer/ultisnips'
-Plugin 'honza/vim-snippets'
-"Plugin 'christoomey/vim-tmux-navigator'
-Plugin 'tpope/vim-fugitive'
-Plugin 'bronson/vim-trailing-whitespace'
-
+  Plugin 'VundleVim/Vundle.vim'
+  " Installed Plugins
+  Plugin 'airblade/vim-gitgutter'
+  Plugin 'rakr/vim-one'
+  Plugin 'Raimondi/delimitMate'
+  Plugin 'scrooloose/nerdtree'
+  Plugin 'Valloric/YouCompleteMe'
+  Plugin 'pearofducks/ansible-vim'
+  Plugin 'mboughaba/i3config.vim'
+  Plugin 'SirVer/ultisnips'
+  Plugin 'honza/vim-snippets'
+  "Plugin 'christoomey/vim-tmux-navigator'
+  Plugin 'tpope/vim-fugitive'
+  Plugin 'bronson/vim-trailing-whitespace'
+  Plugin 'ctrlpvim/ctrlp.vim'
+  Plugin 'Xuyuanp/nerdtree-git-plugin'
+  Plugin 'low-ghost/nerdtree-fugitive'
 call vundle#end()
 
 " Copy selected text to system clipboard (gvim required)
@@ -51,7 +52,6 @@ let g:ansible_extra_keywords_highlight = 1
 set updatetime=0
 set noswapfile
 set expandtab
-set mouse=a
 set number
 set showcmd
 set cursorline
