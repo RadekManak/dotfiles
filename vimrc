@@ -25,6 +25,7 @@ call vundle#begin()
   Plugin 'ctrlpvim/ctrlp.vim'
   Plugin 'Xuyuanp/nerdtree-git-plugin'
   Plugin 'low-ghost/nerdtree-fugitive'
+  Plugin 'tpope/vim-surround.git'
 call vundle#end()
 
 " Copy selected text to system clipboard (gvim required)
