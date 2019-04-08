@@ -26,22 +26,38 @@ call vundle#begin()
   Plugin 'Xuyuanp/nerdtree-git-plugin'
   Plugin 'low-ghost/nerdtree-fugitive'
   Plugin 'tpope/vim-surround.git'
+  Plugin 'python-mode/python-mode'
+  Plugin 'lervag/vimtex'
 call vundle#end()
+
+" Vimtex Settings
+let g:tex_flavor='latex'
+let g:vimtex_view_method='zathura'
+let g:vimtex_quickfix_mode=0
+set conceallevel=1
+let g:tex_conceal='abdmg'
+let g:vimtex_compiler_progname = 'nvr'
 
 " Copy selected text to system clipboard (gvim required)
 vnoremap <C-c> "*Y :let @+=@*<CR>"
 map <C-p> "+P"
 
-syntax on
 filetype plugin indent on
+syntax on
 colorscheme one
 set background=dark
 set termguicolors
 
+let mapleader = ","
+
+let g:UltiSnipsSnippetsDir="~/.vim/snips"
+let g:UltiSnipsSnippetDirectories=["snips", "UltiSnips"]
+"let g:UltiSnipsSnippetDirectories=["snips"]
+
 " Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
-let g:UltiSnipsExpandTrigger="<c-v>"
-let g:UltiSnipsJumpForwardTrigger="<c-b>"
-let g:UltiSnipsJumpBackwardTrigger="<c-y>"
+let g:UltiSnipsExpandTrigger="<c-j>"
+let g:UltiSnipsJumpForwardTrigger="<c-j>"
+let g:UltiSnipsJumpBackwardTrigger="<c-k>"
 map <C-n> :NERDTreeToggle<CR>
 
 "Ansible
