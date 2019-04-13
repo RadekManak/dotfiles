@@ -1,34 +1,31 @@
 set nocompatible
-filetype off
 
-" Vundle boostrap
-if !isdirectory(expand("~/.vim/bundle/Vundle.vim/.git"))
-    silent !git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-  Plugin 'VundleVim/Vundle.vim'
-  " Installed Plugins
-  Plugin 'airblade/vim-gitgutter'
-  Plugin 'rakr/vim-one'
-  Plugin 'Raimondi/delimitMate'
-  Plugin 'scrooloose/nerdtree'
-  Plugin 'Valloric/YouCompleteMe'
-  Plugin 'pearofducks/ansible-vim'
-  Plugin 'mboughaba/i3config.vim'
-  Plugin 'SirVer/ultisnips'
-  Plugin 'honza/vim-snippets'
-  "Plugin 'christoomey/vim-tmux-navigator'
-  Plugin 'tpope/vim-fugitive'
-  Plugin 'bronson/vim-trailing-whitespace'
-  Plugin 'ctrlpvim/ctrlp.vim'
-  Plugin 'Xuyuanp/nerdtree-git-plugin'
-  Plugin 'low-ghost/nerdtree-fugitive'
-  Plugin 'tpope/vim-surround.git'
-  Plugin 'python-mode/python-mode'
-  Plugin 'lervag/vimtex'
-call vundle#end()
+call plug#begin('~/.vim/plugged')
+  Plug 'airblade/vim-gitgutter'
+  Plug 'rakr/vim-one'
+  Plug 'Raimondi/delimitMate'
+  Plug 'scrooloose/nerdtree'
+  Plug 'Valloric/YouCompleteMe'
+  Plug 'pearofducks/ansible-vim'
+  Plug 'mboughaba/i3config.vim'
+  Plug 'SirVer/ultisnips'
+  Plug 'honza/vim-snippets'
+  Plug 'christoomey/vim-tmux-navigator'
+  Plug 'tpope/vim-fugitive'
+  Plug 'bronson/vim-trailing-whitespace'
+  Plug 'ctrlpvim/ctrlp.vim'
+  Plug 'Xuyuanp/nerdtree-git-plugin'
+  Plug 'low-ghost/nerdtree-fugitive'
+  Plug 'tpope/vim-surround'
+  Plug 'python-mode/python-mode'
+  Plug 'lervag/vimtex'
+call plug#end()
 
 " Vimtex Settings
 let g:tex_flavor='latex'
