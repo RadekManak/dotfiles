@@ -25,6 +25,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'tpope/vim-surround'
   Plug 'python-mode/python-mode'
   Plug 'lervag/vimtex'
+  Plug '907th/vim-auto-save'
 call plug#end()
 
 " Vimtex Settings
@@ -34,6 +35,13 @@ let g:vimtex_quickfix_mode=0
 set conceallevel=1
 let g:tex_conceal='abdmg'
 let g:vimtex_compiler_progname = 'nvr'
+
+" Enable autosave in tex files
+let g:auto_save = 0
+augroup ft_markdown
+  au!
+  au FileType tex let b:auto_save = 1
+augroup END
 
 " Copy selected text to system clipboard (gvim required)
 vnoremap <C-c> "*Y :let @+=@*<CR>"
@@ -45,6 +53,7 @@ colorscheme one
 set background=dark
 set termguicolors
 
+let maplocalleader = "\\"
 let mapleader = ","
 
 let g:UltiSnipsSnippetsDir="~/.vim/snips"
