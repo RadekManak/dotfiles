@@ -45,8 +45,8 @@ bindsym XF86MonBrightnessUp exec "light -A 10"
 bindsym XF86MonBrightnessDown exec "light -U 10"
 
 # Start Applications
-bindsym $mod+F1 exec firefox
-bindsym $mod+F3 exec dolphin
+#bindsym $mod+F1 exec firefox
+#bindsym $mod+F3 exec dolphin
 bindsym $mod+Shift+F3 exec gksu pcmanfm
 bindsym Print exec --no-startup-id spectacle
 bindsym $mod+Print --release exec --no-startup-id spectacle -m
@@ -122,80 +122,68 @@ bindsym $mod+Shift+Ctrl+l move container to output right
 bindsym $mod+Shift+Ctrl+h move container to output left
 
 # Workspace names
-set $ws0 0
-set $ws1 1
-set $ws2 2
-set $ws3 3
-set $ws4 4
-set $ws5 5
-set $ws6 6
-set $ws7 7
-set $ws8 8
-set $ws9 9
-set $ws10 10
-set $ws11 11
+set $ws1a 1a
+set $ws2a 2a
+set $ws3a 3a
+set $ws4a 4a
+set $ws5a 5a
+set $ws6a 6a
+
+set $ws1b 1b
+set $ws2b 2b
+set $ws3b 3b
+set $ws4b 4b
+set $ws5b 5b
+set $ws6b 6b
 
 # workspace position on monitors
-set $output_left DP-0
+set $output_left DP-2-2
 set $output_center ${center_display}
-set $output_right DP-0
-exec --no-startup-id autorandr -c
-exec --no-startup-id ~/.config/i3/scripts/monitors.sh
+set $output_right DP-2-3
 
-workspace $ws0 output $output_left
-workspace $ws1 output $output_left
-workspace $ws2 output $output_left
-workspace $ws3 output $output_left
-workspace $ws4 output $output_center
-workspace $ws5 output $output_center
-workspace $ws6 output $output_center
-workspace $ws7 output $output_center
-workspace $ws8 output $output_right
-workspace $ws9 output $output_right
-workspace $ws10 output $output_right
-workspace $ws11 output $output_right
+exec --no-startup-id /usr/bin/autorandr -c
+
+workspace $ws1a output $output_center
+workspace $ws2a output $output_center
+workspace $ws3a output $output_center
+workspace $ws4a output $output_center
+workspace $ws5a output $output_center
+workspace $ws6a output $output_center
+
+workspace $ws1b output $output_right
+workspace $ws2b output $output_right
+workspace $ws3b output $output_right
+workspace $ws4b output $output_right
+workspace $ws5b output $output_right
+workspace $ws6b output $output_right
+
+bindsym $mod+F1 focus output $output_center; focus output eDP-1
+bindsym $mod+F2 focus output $output_right
+#bindsym $mod+F3 focus output DVI-1
 
 # switch to workspace
-bindcode $mod+49 workspace $ws0
-bindsym $mod+1 workspace $ws1
-bindsym $mod+2 workspace $ws2
-bindsym $mod+3 workspace $ws3
-bindsym $mod+4 workspace $ws4
-bindsym $mod+5 workspace $ws5
-bindsym $mod+6 workspace $ws6
-bindsym $mod+7 workspace $ws7
-bindsym $mod+8 workspace $ws8
-bindsym $mod+9 workspace $ws9
-bindsym $mod+0 workspace $ws10
-bindcode $mod+20 workspace $ws11
+bindsym $mod+1 exec --no-startup-id ~/.config/i3/scripts/i3-workspace.sh goto 1
+bindsym $mod+2 exec --no-startup-id ~/.config/i3/scripts/i3-workspace.sh goto 2
+bindsym $mod+3 exec --no-startup-id ~/.config/i3/scripts/i3-workspace.sh goto 3
+bindsym $mod+4 exec --no-startup-id ~/.config/i3/scripts/i3-workspace.sh goto 4
+bindsym $mod+5 exec --no-startup-id ~/.config/i3/scripts/i3-workspace.sh goto 5
+bindsym $mod+6 exec --no-startup-id ~/.config/i3/scripts/i3-workspace.sh goto 6
 
 # Move focused container to workspace
-bindcode $mod+Ctrl+49 move container to workspace $ws0
-bindsym $mod+Ctrl+1 move container to workspace $ws1
-bindsym $mod+Ctrl+2 move container to workspace $ws2
-bindsym $mod+Ctrl+3 move container to workspace $ws3
-bindsym $mod+Ctrl+4 move container to workspace $ws4
-bindsym $mod+Ctrl+5 move container to workspace $ws5
-bindsym $mod+Ctrl+6 move container to workspace $ws6
-bindsym $mod+Ctrl+7 move container to workspace $ws7
-bindsym $mod+Ctrl+8 move container to workspace $ws8
-bindsym $mod+Ctrl+9 move container to workspace $ws9
-bindsym $mod+Ctrl+0 move container to workspace $ws10
-bindcode $mod+Ctrl+20 move container to workspace $ws11
+bindsym $mod+Ctrl+1 exec --no-startup-id ~/.config/i3/scripts/i3-workspace.sh 1
+bindsym $mod+Ctrl+2 exec --no-startup-id ~/.config/i3/scripts/i3-workspace.sh 2
+bindsym $mod+Ctrl+3 exec --no-startup-id ~/.config/i3/scripts/i3-workspace.sh 3
+bindsym $mod+Ctrl+4 exec --no-startup-id ~/.config/i3/scripts/i3-workspace.sh 4
+bindsym $mod+Ctrl+5 exec --no-startup-id ~/.config/i3/scripts/i3-workspace.sh 5
+bindsym $mod+Ctrl+6 exec --no-startup-id ~/.config/i3/scripts/i3-workspace.sh 6
 
 # Move to workspace with focused container
-bindcode $mod+Shift+49 move container to workspace $ws0; workspace $ws0
-bindsym $mod+Shift+1 move container to workspace $ws1; workspace $ws1
-bindsym $mod+Shift+2 move container to workspace $ws2; workspace $ws2
-bindsym $mod+Shift+3 move container to workspace $ws3; workspace $ws3
-bindsym $mod+Shift+4 move container to workspace $ws4; workspace $ws4
-bindsym $mod+Shift+5 move container to workspace $ws5; workspace $ws5
-bindsym $mod+Shift+6 move container to workspace $ws6; workspace $ws6
-bindsym $mod+Shift+7 move container to workspace $ws7; workspace $ws7
-bindsym $mod+Shift+8 move container to workspace $ws8; workspace $ws8
-bindsym $mod+Shift+9 move container to workspace $ws9; workspace $ws9
-bindsym $mod+Shift+0 move container to workspace $ws10; workspace $ws10
-bindcode $mod+Shift+20 move container to workspace $ws11; workspace $ws11
+bindsym $mod+Shift+1 exec --no-startup-id ~/.config/i3/scripts/i3-workspace.sh move 1; exec --no-startup-id ~/.config/i3/scripts/i3-workspace.sh goto 1
+bindsym $mod+Shift+2 exec --no-startup-id ~/.config/i3/scripts/i3-workspace.sh move 2; exec --no-startup-id ~/.config/i3/scripts/i3-workspace.sh goto 2
+bindsym $mod+Shift+3 exec --no-startup-id ~/.config/i3/scripts/i3-workspace.sh move 3; exec --no-startup-id ~/.config/i3/scripts/i3-workspace.sh goto 3
+bindsym $mod+Shift+4 exec --no-startup-id ~/.config/i3/scripts/i3-workspace.sh move 4; exec --no-startup-id ~/.config/i3/scripts/i3-workspace.sh goto 4
+bindsym $mod+Shift+5 exec --no-startup-id ~/.config/i3/scripts/i3-workspace.sh move 5; exec --no-startup-id ~/.config/i3/scripts/i3-workspace.sh goto 5
+bindsym $mod+Shift+6 exec --no-startup-id ~/.config/i3/scripts/i3-workspace.sh move 6; exec --no-startup-id ~/.config/i3/scripts/i3-workspace.sh goto 6
 
 # Open specific applications in floating mode
 for_window [title="Network Connections"] floating enable
@@ -225,6 +213,9 @@ for_window [class="Skype"] floating enable border normal
 for_window [class="Timeset-gui"] floating enable border normal
 for_window [class="(?i)virtualbox"] floating enable border normal
 for_window [class="Xfburn"] floating enable
+
+
+assign [Class="Riot"] $ws6b
 
 # switch to workspace with urgent window automatically
 for_window [urgent=latest] focus
@@ -294,13 +285,13 @@ mode "resize" {
 bindsym control+mod1+Delete exec --no-startup-id xscreensaver-command -lock
 
 # Autostart applications
-exec --no-startup-id /opt/dropbox-filesystem-fix/dropbox_start.py
+exec --no-startup-id /usr/bin/dropbox start
 exec --no-startup-id /usr/bin/xscreensaver
-exec --no-startup-id /usr/libexec/polkit-gnome/polkit-gnome-authentication-agent-1
-exec --no-startup-id nitrogen --restore; sleep 1; compton -b
-exec --no-startup-id nm-applet
+exec --no-startup-id /usr/libexec/polkit-gnome-authentication-agent-1
+exec --no-startup-id /usr/bin/nitrogen --restore; sleep 1; compton -b
+exec --no-startup-id /usr/bin/nm-applet
 exec --no-startup-id /usr/bin/riot
-exec --no-startup-id xfce4-power-manager
+exec --no-startup-id /usr/bin/thunderbird
 exec --no-startup-id /usr/bin/dunst
 
 # Color palette used for the terminal ( ~/.Xresources file )
@@ -336,14 +327,45 @@ set_from_resource $term_color15    color15
 
 # Theme colors
 # class                   border  backgr. text    indic.   child_border
-  client.focused          #556064 #556064 #80FFF9 #FDF6E3
-  client.focused_inactive #2F3D44 #2F3D44 #1ABC9C #454948
-  client.unfocused        #2F3D44 #2F3D44 #1ABC9C #454948
-  client.urgent           #CB4B16 #FDF6E3 #1ABC9C #268BD2
-  client.placeholder      #000000 #0c0c0c #ffffff #000000
+#  client.focused          #556064 #556064 #80FFF9 #FDF6E3
+#  client.focused_inactive #2F3D44 #2F3D44 #1ABC9C #454948
+#  client.unfocused        #2F3D44 #2F3D44 #1ABC9C #454948
+#  client.urgent           #CB4B16 #FDF6E3 #1ABC9C #268BD2
+#  client.placeholder      #000000 #0c0c0c #ffffff #000000
+#
+#  client.background       #2B2C2B
 
-  client.background       #2B2C2B
+# class                 border  bground text    indicator child_border
+client.focused          #4C7899 #285577 #FFFFFF #2E9EF4   #285577
+client.focused_inactive #333333 #5F676A #FFFFFF #484E50   #5F676A
+client.unfocused        #333333 #222222 #888888 #292D2E   #222222
+client.urgent           #2F343A #900000 #FFFFFF #900000   #900000
+client.placeholder      #000000 #0C0C0C #FFFFFF #000000   #0C0C0C
 
+client.background       #FFFFFF
+
+#bar {
+#    position bottom
+#    tray_output primary
+#    status_command i3status
+#
+#    mode dock
+#    hidden_state show
+#    modifier $mod
+#
+#    colors {
+#        background #000000
+#        statusline #ffffff
+#        separator #666666
+#
+#        focused_workspace  #4c7899 #285577 #ffffff
+#        active_workspace   #333333 #5f676a #ffffff
+#        inactive_workspace #333333 #222222 #888888
+#        urgent_workspace   #2f343a #900000 #ffffff
+#        binding_mode       #2f343a #900000 #ffffff
+#    }
+#}
+#
 #############################
 ### settings for i3-gaps: ###
 #############################
