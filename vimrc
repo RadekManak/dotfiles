@@ -23,10 +23,14 @@ call plug#begin('~/.vim/plugged')
   Plug 'Xuyuanp/nerdtree-git-plugin'
   Plug 'low-ghost/nerdtree-fugitive'
   Plug 'tpope/vim-surround'
-  Plug 'python-mode/python-mode'
+  Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }
+  Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
   Plug 'lervag/vimtex'
   Plug '907th/vim-auto-save'
 call plug#end()
+
+let g:pymode_python = 'python3'
+let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
 
 " Vimtex Settings
 let g:tex_flavor='latex'
@@ -57,6 +61,9 @@ let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 
 let maplocalleader = "\\"
 let mapleader = ","
+
+"Save read-only file.
+command Sudow w !sudo tee % >/dev/null
 
 let g:UltiSnipsSnippetsDir="~/.vim/snips"
 let g:UltiSnipsSnippetDirectories=["snips", "UltiSnips"]

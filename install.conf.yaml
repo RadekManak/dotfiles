@@ -19,3 +19,4 @@
     ~/.gitconfig: gitconfig
     ~/.config/dunst/dunstrc: XDG_CONFIG_HOME/dunst/dunstrc
     ~/.vim/snips/: vim/snips/*
+    ~/.vim/.ycm_extra_conf.py: vim/ycm_extra_conf.py
