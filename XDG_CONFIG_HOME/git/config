@@ -1,0 +1,9 @@
+[user]
+	email = Radek.Manak@protonmail.com
+	name = Radek Maňák
+
+[alias]
+    l = log --remotes --tags --oneline --decorate --graph --exclude=refs/stash
+[core]
+	autocrlf = input
+	excludesFile = ~/.config/git/gitignore_global
