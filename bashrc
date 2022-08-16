@@ -92,8 +92,20 @@ alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
 
+# openshift aliases
+alias downscale-cvo='kubectl scale deployment cluster-version-operator -nopenshift-cluster-version --replicas=0'
+alias downscale-mapi='kubectl scale deployment/machine-api-operator -nopenshift-machine-api --replicas=0'
+
+alias upscale-cvo='kubectl scale deployment cluster-version-operator -nopenshift-cluster-version --replicas=1'
+alias upscale-mapi='kubectl scale deployment/machine-api-operator -nopenshift-machine-api --replicas=1'
+
 #set EDITOR
 export EDITOR=vim
+
+case ":$PATH:" in
+  *":~/.local/bin:"*) :;; # already there
+  *) PATH="~/.local/bin:$PATH";; # or PATH="$PATH:$new_entry"
+esac
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like
