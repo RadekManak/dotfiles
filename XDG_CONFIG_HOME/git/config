@@ -5,5 +5,4 @@
 [alias]
     l = log --remotes --tags --oneline --decorate --graph --exclude=refs/stash
 [core]
-	autocrlf = input
 	excludesFile = ~/.config/git/gitignore_global
